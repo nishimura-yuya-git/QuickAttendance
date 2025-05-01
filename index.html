@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="サクッと勤怠 - 一番シンプルで簡単な勤怠管理システム" />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>サクッと勤怠 - 一番シンプルで簡単な勤怠管理システム</title>
+    <style>
+      /* ページ読み込み時のスクロール制御 */
+      html {
+        scroll-behavior: auto !important;
+        overflow-x: hidden;
+      }
+      body {
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+      /* ページ遷移前にスクロール位置を固定 */
+      html.loading {
+        scroll-behavior: auto;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>このアプリを実行するにはJavaScriptを有効にしてください。</noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
