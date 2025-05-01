@@ -77,7 +77,7 @@ const FeatureBenefits: React.FC = () => {
     },
     {
       number: '03',
-      title: '介護職員でも\n迷わず使いこなせる',
+      title: '福祉施設職員でも\n迷わず使いこなせる',
       description: '福祉現場で本当に必要な機能を厳選して搭載しているため、「複雑すぎて使いこなせない」という課題がありません。\nITスキルに自信がない職員でも直感的に操作できる優しい設計です。',
       imageSrc: '/images/benefit-image-3.png',
     }

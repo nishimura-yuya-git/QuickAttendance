@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Shield } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
@@ -11,36 +11,46 @@ const Hero: React.FC = () => {
           alt="福祉施設環境" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-white/90 to-white/70 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-white/60 to-white/70 z-10"></div>
       </div>
       
       {/* 右上の三角形で斜めにカットされた青いエリア - モバイル対応改善 */}
-      <div className="absolute top-0 right-0 w-full md:w-1/2 h-full bg-gradient-to-r from-primary-600 to-primary-500 clip-diagonal z-20"></div>
+      <div className="absolute top-0 right-0 w-dvw md:w-1/2 h-[100%] md:h-full bg-gradient-to-r from-primary-400 to-primary-200 clip-diagonal z-20"></div>
       
       <div className="container relative z-30 h-full py-20 md:py-0 flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full mt-20 md:mt-40">
           {/* 左側のコンテンツエリア */}
           <div className="text-gray-800 relative px-4 md:px-0">
             {/* 福祉特化の見出し - モバイル表示時の位置調整 */}
-            <div className="absolute -top-12 md:-top-16 left-0 md:-left-2 transform rotate-[-5deg] z-40">
+            <div className="absolute -top-16 md:-top-20 left-0 md:-left-2 transform rotate-[-5deg] z-40">
               <span className="inline-block bg-yellow-400 text-gray-900 rounded-full px-5 py-2 md:px-6 md:py-2.5 font-bold text-sm md:text-base shadow-lg border-2 border-white badge-pulse">
-                福祉特化
+                現場の声から生まれた
               </span>
             </div>
 
             {/* テキストコンテンツ - すべて黒文字 */}
             <div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight md:leading-relaxed mb-6 md:mb-10 text-gray-900">
-                一番シンプルで簡単な
-                <span className="block h-2 md:h-3"></span>
-                <span className="text-primary-600">勤怠管理</span>システム
+                福祉施設の職員が
+                <span className="block h-4 md:h-4"></span>
+                本当に求めていた
+                <span className="block h-2 md:h-6"></span>
+                <span className="bg-primary-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-md">勤怠管理</span>システム
               </h1>
+              
               <p className="text-base md:text-lg lg:text-xl mb-8 md:mb-12 text-gray-900 leading-relaxed">
-                「サクッと勤怠」は、定員5～100名規模の福祉施設様向けに
-                特化したシフト管理・勤怠管理システムです。
+                「サクッと勤怠」は、福祉現場で働く職員の声をもとに開発した<span className="hidden md:inline"><br /></span>
+                定員5～100名規模の福祉施設向け勤怠管理システムです。
                 <span className="block h-3"></span>
-                福祉事業所の皆様が抱える記録管理と事務作業の課題を
-                効率的に解決できます。
+                現場のニーズを理解した設計で、記録管理と事務作業の<span className="hidden md:inline"><br /></span>
+                課題を効率的に解決します。
+                <span className="block h-3"></span>
+                <span className="relative inline-block">
+                  <span className="absolute bottom-1 left-0 w-full h-2 bg-yellow-400 opacity-80 -z-10"></span>
+                  <span className="text-sm md:text-xl font-semibold relative z-10">
+                    福祉施設経験者が導入からサポートまで担当。
+                  </span>
+                </span>
               </p>
             </div>
             
