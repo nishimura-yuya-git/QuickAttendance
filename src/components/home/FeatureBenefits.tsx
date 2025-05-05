@@ -1,11 +1,20 @@
 import React from 'react';
 
-const BenefitItem: React.FC<{
+interface BenefitItemProps {
   number: string;
   title: string;
   description: string;
   imageSrc: string;
-}> = ({ number, title, description, imageSrc }) => {
+  imageWidth?: string;
+}
+
+const BenefitItem: React.FC<BenefitItemProps> = ({ 
+  number, 
+  title, 
+  description, 
+  imageSrc,
+  imageWidth = 'w-full'
+}) => {
   // 改行がある場合は分割して表示
   const titleLines = title.split('\n');
   const descriptionLines = description.split('\n');
@@ -14,8 +23,8 @@ const BenefitItem: React.FC<{
   const isEven = parseInt(number) % 2 === 0;
   
   return (
-    <div className={`mb-24 last:mb-0 flex flex-col ${isEven ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 md:gap-16 items-center`}>
-      <div className="w-full md:w-1/2 relative">
+    <div className={`mb-24 last:mb-0 flex flex-col ${isEven ? 'md:flex-row-reverse' : 'md:flex-row'} gap-3 md:gap-4 items-center justify-center`}>
+      <div className="w-full md:w-2/5 relative">
         <div className={`z-10 relative ${isEven ? 'text-right' : 'text-left'}`}>
           <div className="inline-block bg-primary-600 text-white rounded-lg px-4 py-2 mb-4 font-bold">
             POINT {number}
@@ -36,25 +45,19 @@ const BenefitItem: React.FC<{
         </div>
       </div>
       
-      <div className="w-full md:w-1/2">
+      <div className="w-full md:w-2/5">
         <div className="relative">
-          <div className="bg-white rounded-lg shadow-lg p-5 md:p-8 relative z-10">
+          <div className="p-2 relative z-10 flex justify-center">
             <img 
               src={imageSrc} 
               alt={title}
-              className="w-full h-auto rounded"
+              className={`${imageWidth} h-auto rounded`}
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
-                target.src = "https://placehold.co/600x400/ffffff/e2e8f0?text=Benefit+Feature";
+                target.src = `https://placehold.co/600x400/e2e8f0/64748b?text=${encodeURIComponent(titleLines[0])}`;
               }}
             />
-            
           </div>
-            
-          {/* 装飾的な背景要素 - 01と03で表示 */}
-          {(number === '01' || number === '03') && (
-            <div className="absolute top-4 right-4 w-full h-full bg-primary-100 rounded-lg -z-0"></div>
-          )}
         </div>
       </div>
     </div>
@@ -62,24 +65,43 @@ const BenefitItem: React.FC<{
 };
 
 const FeatureBenefits: React.FC = () => {
-  const benefits = [
+  // 各イメージのパスと幅を変数として定義
+  const images = {
+    point01: {
+      src: '/images/benefit-image-1.png',
+      width: 'w-56'
+    },
+    point02: {
+      src: '/images/benefit-image-2.png',
+      width: 'w-4/5'
+    },
+    point03: {
+      src: '/images/benefit-image-3.png',
+      width: 'w-3/4'
+    }
+  };
+
+  const benefits: BenefitItemProps[] = [
     {
       number: '01',
       title: '本当に必要な機能\nだけをシンプルに',
       description: '複雑な多機能システムとは違い、福祉記録に本当に必要な機能だけを厳選。\n余計な機能に惑わされず、職員が混乱することなく日々の記録に集中できます。',
-      imageSrc: '/images/benefit-image-1.png',
+      imageSrc: images.point01.src,
+      imageWidth: images.point01.width
     },
     {
       number: '02',
       title: '福祉事業所向け\n低コスト導入プラン',
       description: 'サクッと勤怠は利用者定員に応じた明確な料金体系です。\n追加オプション費用はなく、初めから全ての機能をご利用いただけるため、予算計画が立てやすくなっています。',
-      imageSrc: '/images/benefit-image-2.png',
+      imageSrc: images.point02.src,
+      imageWidth: images.point02.width
     },
     {
       number: '03',
       title: '福祉施設職員でも\n迷わず使いこなせる',
       description: '福祉現場で本当に必要な機能を厳選して搭載しているため、「複雑すぎて使いこなせない」という課題がありません。\nITスキルに自信がない職員でも直感的に操作できる優しい設計です。',
-      imageSrc: '/images/benefit-image-3.png',
+      imageSrc: images.point03.src,
+      imageWidth: images.point03.width
     }
   ];
 
@@ -103,6 +125,7 @@ const FeatureBenefits: React.FC = () => {
               title={benefit.title}
               description={benefit.description}
               imageSrc={benefit.imageSrc}
+              imageWidth={benefit.imageWidth}
             />
           ))}
         </div>

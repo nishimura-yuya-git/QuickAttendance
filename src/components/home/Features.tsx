@@ -6,6 +6,15 @@ interface ProblemCardProps {
   points: string[];
 }
 
+interface ProblemProps {
+  title: string;
+  points: string[];
+  imageSize?: {
+    width: string;
+    height?: string;
+  };
+}
+
 const ProblemCard: React.FC<ProblemCardProps> = ({ title, points }) => {
   // タイトルに改行が含まれている場合、行ごとに分けて表示
   const titleLines = title.split('\n');
@@ -39,13 +48,16 @@ const ProblemCard: React.FC<ProblemCardProps> = ({ title, points }) => {
 };
 
 const Features: React.FC = () => {
-  const problems = [
+  const problems: ProblemProps[] = [
     {
       title: '記録作成と集計に\n時間がかかる',
       points: [
         '手書きの介護記録やエクセルでの管理に時間を費やしている',
         '利用者ごとのサービス実績集計や請求処理の負担を軽減したい',
       ],
+      imageSize: {
+        width: 'w-28',
+      }
     },
     {
       title: '福祉システム導入\nのハードル',
@@ -53,6 +65,9 @@ const Features: React.FC = () => {
         '専門システムの導入費用が高く、予算確保が難しい',
         'シンプルで使いやすい福祉向けシステムを探している',
       ],
+      imageSize: {
+        width: 'w-44',
+      }
     },
     {
       title: '操作が複雑で\n使いこなせない',
@@ -60,6 +75,9 @@ const Features: React.FC = () => {
         '既存システムは機能が多すぎて職員が使いこなせていない',
         '介護職員の年齢層やITスキルに差があり運用に苦労している',
       ],
+      imageSize: {
+        width: 'w-48',
+      }
     },
     {
       title: '法令遵守と記録管理',
@@ -67,6 +85,9 @@ const Features: React.FC = () => {
         '介護保険や障害福祉サービスの記録要件への対応が負担',
         '人員不足の中でも確実な記録管理体制を整えたい',
       ],
+      imageSize: {
+        width: 'w-36',
+      }
     },
   ];
 
@@ -92,7 +113,7 @@ const Features: React.FC = () => {
                 <img 
                   src={`/images/problem-person-${index + 1}.png`}
                   alt={problem.title}
-                  className="w-28 h-auto"
+                  className={`${problem.imageSize?.width || 'w-28'} ${problem.imageSize?.height || 'h-auto'}`}
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.src = 'https://placehold.co/200x200/e2e8f0/64748b?text=' + encodeURIComponent(problem.title.split('が')[0]);
