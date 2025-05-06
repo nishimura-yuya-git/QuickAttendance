@@ -46,27 +46,23 @@ const CommercialTransactions: React.FC = () => {
                 <tbody>
                   <tr className="border-b">
                     <th className="py-3 px-4 text-left bg-gray-50 w-1/3">事業者名</th>
-                    <td className="py-3 px-4">株式会社サクッと勤怠</td>
+                    <td className="py-3 px-4">株式会社Lean Stack</td>
                   </tr>
                   <tr className="border-b">
                     <th className="py-3 px-4 text-left bg-gray-50">代表者名</th>
-                    <td className="py-3 px-4">山田 太郎</td>
+                    <td className="py-3 px-4">吹上 由樹</td>
                   </tr>
                   <tr className="border-b">
                     <th className="py-3 px-4 text-left bg-gray-50">所在地</th>
-                    <td className="py-3 px-4">〒100-0001<br />東京都千代田区千代田1-1<br />千代田ビル10階</td>
-                  </tr>
-                  <tr className="border-b">
-                    <th className="py-3 px-4 text-left bg-gray-50">電話番号</th>
-                    <td className="py-3 px-4">03-1234-5678（平日 10:00〜17:00）</td>
+                    <td className="py-3 px-4">〒541-0048<br />大阪府大阪市中央区徳井町2丁目2-13 3F</td>
                   </tr>
                   <tr className="border-b">
                     <th className="py-3 px-4 text-left bg-gray-50">メールアドレス</th>
-                    <td className="py-3 px-4">info@sakutto-kintai.jp</td>
+                    <td className="py-3 px-4">info@leanstack-buzz.com</td>
                   </tr>
                   <tr className="border-b">
                     <th className="py-3 px-4 text-left bg-gray-50">URL</th>
-                    <td className="py-3 px-4">https://sakutto-kintai.jp</td>
+                    <td className="py-3 px-4">https://www.leanstack-buzz.com/</td>
                   </tr>
                   <tr className="border-b">
                     <th className="py-3 px-4 text-left bg-gray-50">商品の名称</th>
@@ -86,7 +82,7 @@ const CommercialTransactions: React.FC = () => {
                   </tr>
                   <tr className="border-b">
                     <th className="py-3 px-4 text-left bg-gray-50">商品代金以外の必要料金</th>
-                    <td className="py-3 px-4">なし</td>
+                    <td className="py-3 px-4">オプション機能追加費用（別途お見積り）</td>
                   </tr>
                   <tr className="border-b">
                     <th className="py-3 px-4 text-left bg-gray-50">支払方法</th>
@@ -101,7 +97,7 @@ const CommercialTransactions: React.FC = () => {
                   </tr>
                   <tr className="border-b">
                     <th className="py-3 px-4 text-left bg-gray-50">引渡時期</th>
-                    <td className="py-3 px-4">お申込み完了後、3営業日以内にアカウント情報をお送りします。</td>
+                    <td className="py-3 px-4">お申込み完了後、5営業日以内にアカウント情報をお送りします。</td>
                   </tr>
                   <tr className="border-b">
                     <th className="py-3 px-4 text-left bg-gray-50">契約期間</th>
